@@ -4,7 +4,6 @@ const CurrentExchangeRate = props => {
   const results = props.arr.map(item => {
     return (
       <h1>
-        {' '}
         {item} : {props.tab[item]}
       </h1>
     );
@@ -14,7 +13,6 @@ const CurrentExchangeRate = props => {
     <div>
       <form onSubmit={props.submit}>
         <label>
-          {' '}
           Wybierz walutę:-
           <select onChange={props.change}>
             <option defaultValue value="EUR">
@@ -25,27 +23,27 @@ const CurrentExchangeRate = props => {
             <option value="CHF">CHF</option>
           </select>
         </label>
-        <label>
+        <label htmlFor="eur">
           Euro
-          <input onChange={props.checkboxValue} type="checkbox" name="EUR" id="" />
+          <input onChange={props.checkboxValue} type="checkbox" name="EUR" id="eur" />
         </label>
 
-        <label>
+        <label htmlFor="pln">
           Złoty
-          <input onChange={props.checkboxValue} type="checkbox" name="PLN" id="" />
+          <input onChange={props.checkboxValue} type="checkbox" name="PLN" id="pln" />
         </label>
 
-        <label>
+        <label htmlFor="usd">
           Dolar
-          <input onChange={props.checkboxValue} type="checkbox" name="USD" id="" />
+          <input onChange={props.checkboxValue} type="checkbox" name="USD" id="usd" />
         </label>
 
-        <label>
+        <label htmlFor="chf">
           Frank Szwajcarski
-          <input onChange={props.checkboxValue} type="checkbox" name="CHF" id="" />
+          <input onChange={props.checkboxValue} type="checkbox" name="CHF" id="chf" />
         </label>
 
-        <button>Wybierz</button>
+        <button type="submit">Wybierz</button>
       </form>
       <div>
         {/* <h3>{props.tab[waluta]}</h3> */}

@@ -1,0 +1,39 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const StyledWrap = styled.div`
+  display: flex;
+  padding: 10px;
+  overflow: hidden;
+`;
+
+const StyledImg = styled.img`
+  width: 80px;
+  height: 80px;
+`;
+
+const StyledTitle = styled.p`
+  justify-content: center;
+  align-self: center;
+  font-size: ${({ theme }) => theme.fontSize.l};
+  padding-left: 15px;
+  color: ${({ theme }) => theme.ligthBlue};
+  /* transform: translateY(100px); */
+  transition: transform 0.3s;
+  font-weight: ${({ theme }) => theme.bold};
+
+  ${StyledWrap}:hover & {
+    transform: translateY(0);
+  }
+`;
+
+const NavElement = ({ icon, title }) => {
+  return (
+    <StyledWrap>
+      <StyledImg src={icon} alt="" />
+      <StyledTitle>{title}</StyledTitle>
+    </StyledWrap>
+  );
+};
+
+export default NavElement;
