@@ -36,7 +36,7 @@ const Navi = () => {
       </StyledLink>
 
       <StyledLink as={NavLink} to="/calculatorRates">
-        <NavElement icon={exchangeIcon} title="Wymiara Walut" />
+        <NavElement icon={exchangeIcon} title="Wymiana Walut" />
       </StyledLink>
 
       <StyledLink as={NavLink} to="/historyRates">

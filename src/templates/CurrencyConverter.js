@@ -22,6 +22,19 @@ class CurrencyConverter extends Component {
     value: '',
   };
 
+  handleChangeValue = e => {
+    const { value } = e.target;
+    console.log(this.state.value);
+    this.setState({
+      value,
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(this.state.value);
+  };
+
   render() {
     return (
       <StyledWrap>
@@ -29,7 +42,11 @@ class CurrencyConverter extends Component {
         <Paragraph>
           Na podstawie aktualnych notowań kursów średnich walut obcych NBP z dnia 2019-05-27.
         </Paragraph>
-        <FormCurrencyConverter />
+        <FormCurrencyConverter
+          submit={this.handleSubmit}
+          value={this.state.value}
+          change={this.handleChangeValue}
+        />
       </StyledWrap>
     );
   }

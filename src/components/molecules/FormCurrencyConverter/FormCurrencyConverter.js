@@ -2,10 +2,38 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledWraper = styled.div`
-  display: grid;
+  width: 700px;
+  margin: 0 auto;
 `;
 
-const FormCurrencyConverter = () => {
+const StyledForm = styled.div`
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 40px 40px 40px 40px;
+  background-color: red;
+  padding: 20px;
+  justify-content: center;
+  justify-items: center;
+`;
+
+const StyledLabel = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: ${({ theme }) => theme.bold};
+`;
+
+const StyledInput = styled.input`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  font-size: 25px;
+  margin-left: 5px;
+`;
+
+const FormCurrencyConverter = props => {
   const currency = [
     'USD - dolar amerykański',
     'AUD - dolar australijski',
@@ -24,24 +52,23 @@ const FormCurrencyConverter = () => {
 
   return (
     <StyledWraper>
-      <form>
-        <label htmlFor="value">Podaj kwotę do przeliczenia</label>
-        <input type="text" id="value" />
-        <label htmlFor="currency-first">Przelicz z: </label>
+      <StyledForm>
+        <StyledLabel> Kwota</StyledLabel>
+        <StyledInput value={props.value} onChange={props.change} type="number" id="value" />
+        <StyledLabel>Przelicz z:</StyledLabel>
         <select name="currency-first" id="currency-first">
           {currency.map(item => (
             <option value={item.substring(0, 3)}>{item}</option>
           ))}
         </select>
-        <label htmlFor="currency-second">Przelicz na: </label>
-
+        <StyledLabel>Przelicz na:</StyledLabel>
         <select name="currency-second" id="currency-second">
           {currency.map(item => (
             <option>{item}</option>
           ))}
         </select>
-        <button>Przelicz</button>
-      </form>
+        <button type="submit">Przelicz</button>
+      </StyledForm>
     </StyledWraper>
   );
 };
