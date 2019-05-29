@@ -68,6 +68,7 @@ class ActualExchangeRate extends Component {
     return (
       <StyledWraper>
         <StyledHeader>Aktualne kursy walut z dnia {this.state.date} </StyledHeader>
+
         <DataActualCurrency
           data={this.state.data}
           usd={usd}

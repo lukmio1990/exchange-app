@@ -13,6 +13,7 @@ const StyledWrap = styled.div`
   grid-column-gap: 10px;
   background-color: ${({ theme }) => theme.ligthGrey};
   padding: 10px;
+  box-shadow: 0px 0px 15px 2px #000000;
 `;
 
 const StyledLink = styled(NavLink)`

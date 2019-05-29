@@ -8,7 +8,7 @@ import HistoryExchangeRate from 'templates/HistoryExchangeRate';
 
 const StyledWrap = styled.div`
   /* display: grid; */
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: ${({ theme }) => theme.darkBlue};
 `;
 

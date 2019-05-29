@@ -2,18 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledWraper = styled.div`
-  width: 700px;
-  margin: 0 auto;
+  width: 600px;
+  margin: 40px auto 0 auto;
 `;
 
 const StyledForm = styled.div`
   display: grid;
-  grid-template-columns: 300px 300px;
+  grid-template-columns: 200px 200px;
   grid-template-rows: 40px 40px 40px 40px;
-  background-color: red;
-  padding: 20px;
+  grid-gap: 10px 5px;
   justify-content: center;
-  justify-items: center;
+  /* justify-items: center; */
+  /* align-items: center; */
+  background-color: ${({ theme }) => theme.ligthBlue};
+  padding: 20px;
+  box-shadow: 0px 0px 15px 2px #000000;
 `;
 
 const StyledLabel = styled.p`
@@ -28,14 +31,29 @@ const StyledInput = styled.input`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 160px;
   font-size: 25px;
-  margin-left: 5px;
+`;
+
+const StyledSelect = styled.select`
+  font-size: 15px;
+`;
+
+const StyledButton = styled.button`
+  grid-column: span 2;
+  justify-self: center;
+  outline: none;
+  border: 2px solid green;
+  font-size: 25px;
+  padding: 0 5px;
+  cursor: pointer;
+  /* width: 100px; */
 `;
 
 const FormCurrencyConverter = props => {
   const currency = [
     'USD - dolar amerykański',
+    'PLN - Złotówka polska',
     'AUD - dolar australijski',
     'CAD - dolar kanadyjski',
     'EUR - euro',
@@ -56,18 +74,20 @@ const FormCurrencyConverter = props => {
         <StyledLabel> Kwota</StyledLabel>
         <StyledInput value={props.value} onChange={props.change} type="number" id="value" />
         <StyledLabel>Przelicz z:</StyledLabel>
-        <select name="currency-first" id="currency-first">
+        <StyledSelect onChange={props.changeSelect} name="currency-first" id="currency-first">
           {currency.map(item => (
-            <option value={item.substring(0, 3)}>{item}</option>
+            <option value={item.substring(0, 3).toLowerCase()}>{item}</option>
           ))}
-        </select>
+        </StyledSelect>
         <StyledLabel>Przelicz na:</StyledLabel>
-        <select name="currency-second" id="currency-second">
+        <StyledSelect onChange={props.changeSelect} name="currency-second" id="currency-second">
           {currency.map(item => (
-            <option>{item}</option>
+            <option value={item.substring(0, 3).toLowerCase()}>{item}</option>
           ))}
-        </select>
-        <button type="submit">Przelicz</button>
+        </StyledSelect>
+        <StyledButton onClick={props.submit} type="submit">
+          Przelicz
+        </StyledButton>
       </StyledForm>
     </StyledWraper>
   );
