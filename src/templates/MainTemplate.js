@@ -7,8 +7,6 @@ import CurrencyConverter from 'templates/CurrencyConverter';
 import HistoryExchangeRate from 'templates/HistoryExchangeRate';
 
 const StyledWrap = styled.div`
-  /* display: grid; */
-  /* min-height: 100vh; */
   background-color: ${({ theme }) => theme.darkBlue};
 `;
 

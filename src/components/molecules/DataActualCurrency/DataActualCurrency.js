@@ -5,6 +5,7 @@ const StyledGridWraper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 200px);
   border: 1px solid red;
+
   &:nth-child(even) {
     background-color: #4e526b;
   }

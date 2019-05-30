@@ -12,8 +12,6 @@ const StyledForm = styled.div`
   grid-template-rows: 40px 40px 40px 40px;
   grid-gap: 10px 5px;
   justify-content: center;
-  /* justify-items: center; */
-  /* align-items: center; */
   background-color: ${({ theme }) => theme.ligthBlue};
   padding: 20px;
   box-shadow: 0px 0px 15px 2px #000000;
@@ -67,25 +65,25 @@ const FormCurrencyConverter = props => {
     'SEK - korona szwedzka',
     'XDR - SDR',
   ];
-
+  const { change, changeSelect, value, submit } = props;
   return (
     <StyledWraper>
       <StyledForm>
         <StyledLabel> Kwota</StyledLabel>
-        <StyledInput value={props.value} onChange={props.change} type="number" id="value" />
+        <StyledInput value={value} onChange={change} type="number" id="value" />
         <StyledLabel>Przelicz z:</StyledLabel>
-        <StyledSelect onChange={props.changeSelect} name="currency-first" id="currency-first">
+        <StyledSelect onChange={changeSelect} name="currency-first" id="currency-first">
           {currency.map(item => (
             <option value={item.substring(0, 3).toLowerCase()}>{item}</option>
           ))}
         </StyledSelect>
         <StyledLabel>Przelicz na:</StyledLabel>
-        <StyledSelect onChange={props.changeSelect} name="currency-second" id="currency-second">
+        <StyledSelect onChange={changeSelect} name="currency-second" id="currency-second">
           {currency.map(item => (
             <option value={item.substring(0, 3).toLowerCase()}>{item}</option>
           ))}
         </StyledSelect>
-        <StyledButton onClick={props.submit} type="submit">
+        <StyledButton onClick={submit} type="submit">
           Przelicz
         </StyledButton>
       </StyledForm>

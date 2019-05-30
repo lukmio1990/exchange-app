@@ -1,7 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledWrap = styled.div``;
+const StyledWrap = styled.div`
+  width: 500px;
+  margin: 20px auto 0 auto;
+  background-color: ${({ theme }) => theme.darkGrey};
+  padding: 15px;
+  box-shadow: 0px 0px 15px 2px #000000;
+`;
+
+const StyledTitle = styled.div`
+  text-align: center;
+  font-size: ${({ theme }) => theme.fontSize.l};
+  font-weight: ${({ theme }) => theme.bold};
+`;
+
+const Paragraph = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.m};
+  text-align: center;
+  padding: 5px 0;
+`;
 
 const ScoreCurrencyConverter = props => {
   const {
@@ -14,19 +32,19 @@ const ScoreCurrencyConverter = props => {
   } = props;
   return (
     <StyledWrap>
-      <p>
-        {`${props.value} ${props.firstCurrency.toUpperCase()} = ${(
+      <StyledTitle>
+        {`${value} ${firstCurrency.toUpperCase()} = ${(
           (firstCurrencyValue / secondCurrencyValue) *
           value
-        ).toFixed(2)} ${props.secondCurrency.toUpperCase()}`}
-      </p>
-      <p>{`Przelicznik (${firstCurrency.toUpperCase()})/${secondCurrency.toUpperCase()}) wynosi ${(
+        ).toFixed(2)} ${secondCurrency.toUpperCase()}`}
+      </StyledTitle>
+      <Paragraph>{`Przelicznik (${firstCurrency.toUpperCase()})/${secondCurrency.toUpperCase()}) wynosi ${(
         firstCurrencyValue / secondCurrencyValue
-      ).toFixed(4)}`}</p>
-      <p>
-        {`  Przeliczenia wg
+      ).toFixed(4)}`}</Paragraph>
+      <Paragraph>
+        {`  Przeliczenia wg średniego
         kursu NBP z dnia ${date}`}
-      </p>
+      </Paragraph>
     </StyledWrap>
   );
 };

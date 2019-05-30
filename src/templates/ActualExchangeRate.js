@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const StyledWraper = styled.div`
   margin-top: 50px;
+  min-height: 100vh;
 `;
 
 const StyledHeader = styled(Header)`
@@ -32,7 +33,6 @@ class ActualExchangeRate extends Component {
 
   componentDidMount() {
     const API = 'https://api.nbp.pl/api/exchangerates/tables/c/?format=json';
-    // console.log(API);
     fetch(API)
       .then(response => {
         if (response.ok) {
@@ -64,27 +64,11 @@ class ActualExchangeRate extends Component {
   }
 
   render() {
-    const { usd, aud, cad, eur, huf, chf, gbp, jpy, czk, ddk, nok, sek, xdr } = this.state;
     return (
       <StyledWraper>
         <StyledHeader>Aktualne kursy walut z dnia {this.state.date} </StyledHeader>
 
-        <DataActualCurrency
-          data={this.state.data}
-          usd={usd}
-          aud={aud}
-          cad={cad}
-          eur={eur}
-          huf={huf}
-          chf={chf}
-          gbp={gbp}
-          jpy={jpy}
-          czk={czk}
-          ddk={ddk}
-          nok={nok}
-          sek={sek}
-          xdr={xdr}
-        />
+        <DataActualCurrency {...this.state} />
       </StyledWraper>
     );
   }

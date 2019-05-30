@@ -26,7 +26,6 @@ class CurrencyConverter extends Component {
     firstCurrencyValue: '',
     secondCurrency: 'usd',
     secondCurrencyValue: '',
-    score: '',
     visible: false,
     date: '',
   };
@@ -128,34 +127,32 @@ class CurrencyConverter extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({
-      visible: true,
-    });
+    if (this.state.value) {
+      this.setState({
+        visible: true,
+      });
+    } else {
+      console.log('NIe wpisałeś ');
+    }
   };
 
   render() {
+    const { handleSubmit, handleChangeValue, handleChangeCurrency } = this;
     return (
       <StyledWrap>
         <StyledHeader>Kalkulator walutowy </StyledHeader>
         <Paragraph>
-          Na podstawie aktualnych notowań kursów średnich walut obcych NBP z dnia 2019-05-27.
+          {`Na podstawie aktualnych notowań kursów średnich walut obcych NBP z dnia ${
+            this.state.date
+          }.`}
         </Paragraph>
         <FormCurrencyConverter
-          submit={this.handleSubmit}
+          submit={handleSubmit}
           value={this.state.value}
-          change={this.handleChangeValue}
-          changeSelect={this.handleChangeCurrency}
+          change={handleChangeValue}
+          changeSelect={handleChangeCurrency}
         />
-        {this.state.visible ? (
-          <ScoreCurrencyConverter
-            firstCurrency={this.state.firstCurrency}
-            firstCurrencyValue={this.state.firstCurrencyValue}
-            secondCurrency={this.state.secondCurrency}
-            secondCurrencyValue={this.state.secondCurrencyValue}
-            value={this.state.value}
-            date={this.state.date}
-          />
-        ) : null}
+        {this.state.visible ? <ScoreCurrencyConverter {...this.state} /> : null}
       </StyledWrap>
     );
   }
