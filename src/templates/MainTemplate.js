@@ -5,6 +5,7 @@ import Navi from 'components/organisms/Navi/Navi';
 import ActualExchangeRate from 'templates/ActualExchangeRate';
 import CurrencyConverter from 'templates/CurrencyConverter';
 import HistoryExchangeRate from 'templates/HistoryExchangeRate';
+import Footer from 'components/organisms/Footer/Footer';
 
 const StyledWrap = styled.div`
   background-color: ${({ theme }) => theme.darkBlue};
@@ -20,6 +21,7 @@ const MainTemplate = () => (
         <Route exact path="/calculatorRates" component={CurrencyConverter} />
         <Route exact path="/historyRates" component={HistoryExchangeRate} />
       </Switch>
+      <Footer />
     </StyledWrap>
   </BrowserRouter>
 );
