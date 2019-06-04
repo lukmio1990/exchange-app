@@ -2,14 +2,24 @@ import React, { Component } from 'react';
 import Header from 'components/atoms/Header/Header';
 import DataActualCurrency from 'components/molecules/DataActualCurrency/DataActualCurrency';
 import styled from 'styled-components';
+import Triangle from 'components/atoms/Triangle/Triangle';
+import zdj from 'assets/money2.jpg';
 
 const StyledWraper = styled.div`
-  margin-top: 50px;
+  /* margin-top: 50px; */
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-image: url(${zdj});
 `;
 
 const StyledHeader = styled(Header)`
   text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
 `;
 
 class ActualExchangeRate extends Component {
@@ -66,6 +76,8 @@ class ActualExchangeRate extends Component {
   render() {
     return (
       <StyledWraper>
+        <Triangle first />
+
         <StyledHeader>Aktualne kursy walut z dnia {this.state.date} </StyledHeader>
 
         <DataActualCurrency {...this.state} />

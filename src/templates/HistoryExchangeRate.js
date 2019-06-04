@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+// import Triangle from 'components/atoms/Triangle/Triangle';
 
 const StyledWrap = styled.div`
   min-height: 100vh;
@@ -10,7 +11,12 @@ const StyledWrap = styled.div`
 `;
 
 const HistoryExchangeRate = () => {
-  return <StyledWrap>Strona w budowie</StyledWrap>;
+  return (
+    <StyledWrap>
+      {/* <Triangle secondary /> */}
+      <p>Strona w budowie</p>
+    </StyledWrap>
+  );
 };
 
 export default HistoryExchangeRate;

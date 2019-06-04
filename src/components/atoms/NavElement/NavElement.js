@@ -18,7 +18,7 @@ const StyledTitle = styled.p`
   font-size: ${({ theme }) => theme.fontSize.l};
   padding-left: 15px;
   color: ${({ theme }) => theme.ligthBlue};
-  /* transform: translateY(100px); */
+  transform: translateY(100px);
   transition: transform 0.3s;
   font-weight: ${({ theme }) => theme.bold};
 

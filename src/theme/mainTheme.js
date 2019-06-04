@@ -1,4 +1,7 @@
 export const theme = {
+  first: 'red',
+  second: 'blue',
+  third: 'green',
   darkGrey: 'hsl(229, 2%, 52%)',
   ligthGrey: 'hsl(209, 19%, 80%)',
   darkBlue: 'hsl(209, 87%, 19%)',

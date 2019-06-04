@@ -3,10 +3,13 @@ import styled from 'styled-components';
 import Header from 'components/atoms/Header/Header';
 import FormCurrencyConverter from 'components/molecules/FormCurrencyConverter/FormCurrencyConverter';
 import ScoreCurrencyConverter from 'components/molecules/ScoreCurrencyConverter/ScoreCurrencyConverter';
+import Triangle from 'components/atoms/Triangle/Triangle';
 
 const StyledWrap = styled.div`
-  padding-top: 50px;
+  /* padding-top: 50px; */
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 `;
 
 const StyledHeader = styled(Header)`
@@ -140,6 +143,7 @@ class CurrencyConverter extends Component {
     const { handleSubmit, handleChangeValue, handleChangeCurrency } = this;
     return (
       <StyledWrap>
+        <Triangle second />
         <StyledHeader>Kalkulator walutowy </StyledHeader>
         <Paragraph>
           {`Na podstawie aktualnych notowań kursów średnich walut obcych NBP z dnia ${

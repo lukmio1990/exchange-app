@@ -5,7 +5,7 @@ import Logo from 'components/atoms/Logo/Logo';
 import moneyIcon from 'assets/moneyIcon.png';
 import historyIcon from 'assets/historyIcon.png';
 import exchangeIcon from 'assets/exchangeIcon.png';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledWrap = styled.div`
   display: grid;
@@ -19,11 +19,55 @@ const StyledWrap = styled.div`
 const StyledLink = styled(NavLink)`
   text-decoration: none;
   transition: background-color 0.5s;
-
+  ${({ first }) =>
+    first &&
+    css`
+      &:hover {
+        background-color: ${({ theme }) => theme.first};
+      }
+    `}
+   
+    ${({ second }) =>
+      second &&
+      css`
+        &:hover {
+          background-color: ${({ theme }) => theme.second};
+        }
+      `}
+      ${({ third }) =>
+        third &&
+        css`
+          &:hover {
+            background-color: ${({ theme }) => theme.third};
+          }
+        `}
+    
   &.active {
-    background-color: ${({ theme }) => theme.darkGrey};
     border-bottom: 2px solid ${({ theme }) => theme.white};
   }
+
+  ${({ first }) =>
+    first &&
+    css`
+      &.active {
+        background-color: ${({ theme }) => theme.first};
+      }
+    `}
+
+    ${({ second }) =>
+      second &&
+      css`
+        &.active {
+          background-color: ${({ theme }) => theme.second};
+        }
+      `}
+    ${({ third }) =>
+      third &&
+      css`
+        &.active {
+          background-color: ${({ theme }) => theme.third};
+        }
+      `}
 `;
 
 const Navi = () => {
@@ -32,15 +76,15 @@ const Navi = () => {
       <StyledLink exact as={NavLink} to="/" activeClassName="">
         <Logo />
       </StyledLink>
-      <StyledLink as={NavLink} to="/exchangeRates">
+      <StyledLink first as={NavLink} to="/exchangeRates">
         <NavElement icon={moneyIcon} title="Kursy Walut" />
       </StyledLink>
 
-      <StyledLink as={NavLink} to="/calculatorRates">
+      <StyledLink second as={NavLink} to="/calculatorRates">
         <NavElement icon={exchangeIcon} title="Wymiana Walut" />
       </StyledLink>
 
-      <StyledLink as={NavLink} to="/historyRates">
+      <StyledLink third as={NavLink} to="/historyRates">
         <NavElement icon={historyIcon} title="Historia Kursów" />
       </StyledLink>
     </StyledWrap>

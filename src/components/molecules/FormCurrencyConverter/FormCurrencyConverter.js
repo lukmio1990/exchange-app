@@ -2,8 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledWraper = styled.div`
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 600px;
   margin: 40px auto 0 auto;
+  z-index: 9999;
 `;
 
 const StyledForm = styled.div`

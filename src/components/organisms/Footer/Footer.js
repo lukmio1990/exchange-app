@@ -10,14 +10,11 @@ const StyledWrap = styled.div`
   background-color: red;
 `;
 
-const StyledLogo = styled.div`
-  padding: 10px;
-`;
+const StyledLogo = styled.div``;
 
 const StyledImg = styled.img`
   width: 100%;
   max-width: 250px;
-  /* height: 100%; */
 `;
 
 const StyledWrapParagraph = styled.div`
@@ -26,7 +23,6 @@ const StyledWrapParagraph = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin: 0 auto; */
 `;
 
 const Paragraph = styled.p`

@@ -9,6 +9,10 @@ const StyledGridWraper = styled.div`
   &:nth-child(even) {
     background-color: #4e526b;
   }
+
+  &:nth-child(odd) {
+    background-color: #d2d2d2;
+  }
 `;
 
 const StyledWraper = styled.div`
@@ -18,6 +22,11 @@ const StyledWraper = styled.div`
   align-items: center;
   padding-top: 50px;
   padding-bottom: 50px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
 `;
 
 const Title = styled.h1`
@@ -33,6 +42,10 @@ const Content = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:nth-child(odd) {
+    color: black;
+  }
 `;
 
 const DataActualCurrency = ({
