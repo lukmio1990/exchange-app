@@ -13,7 +13,7 @@ const StyledWrap = styled.div`
 `;
 
 const MainTemplate = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <StyledWrap>
       <Navi />
       <Switch>
