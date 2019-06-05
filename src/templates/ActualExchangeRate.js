@@ -7,10 +7,13 @@ import zdj from 'assets/money2.jpg';
 
 const StyledWraper = styled.div`
   /* margin-top: 50px; */
-  min-height: 100vh;
+  min-height: 900px;
+  width: 100%;
   position: relative;
   overflow: hidden;
   background-image: url(${zdj});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const StyledHeader = styled(Header)`
@@ -77,9 +80,7 @@ class ActualExchangeRate extends Component {
     return (
       <StyledWraper>
         <Triangle first />
-
         <StyledHeader>Aktualne kursy walut z dnia {this.state.date} </StyledHeader>
-
         <DataActualCurrency {...this.state} />
       </StyledWraper>
     );

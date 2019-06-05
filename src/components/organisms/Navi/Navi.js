@@ -11,7 +11,7 @@ const StyledWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
   grid-column-gap: 10px;
-  background-color: ${({ theme }) => theme.ligthGrey};
+  background-color: ${({ theme }) => theme.darkGrey};
   padding: 10px;
   box-shadow: 0px 0px 15px 2px #000000;
 `;
@@ -19,6 +19,13 @@ const StyledWrap = styled.div`
 const StyledLink = styled(NavLink)`
   text-decoration: none;
   transition: background-color 0.5s;
+  box-shadow: 0px 0px 5px -2px #000000;
+
+&:first-child{
+  box-shadow: none;
+}
+
+
   ${({ first }) =>
     first &&
     css`

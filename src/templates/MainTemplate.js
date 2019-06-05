@@ -6,11 +6,10 @@ import ActualExchangeRate from 'templates/ActualExchangeRate';
 import CurrencyConverter from 'templates/CurrencyConverter';
 import HistoryExchangeRate from 'templates/HistoryExchangeRate';
 import Footer from 'components/organisms/Footer/Footer';
-// import zdj from 'assets/money2.jpg';
 
 const StyledWrap = styled.div`
-  /* background-color: ${({ theme }) => theme.darkBlue}; */
-
+  display: flex;
+  flex-direction: column;
 `;
 
 const MainTemplate = () => (

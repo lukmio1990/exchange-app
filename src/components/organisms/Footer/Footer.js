@@ -7,7 +7,8 @@ const StyledWrap = styled.div`
   justify-content: flex-start;
   align-items: center;
   height: 10vh;
-  background-color: red;
+  background-color: ${({ theme }) => theme.darkGrey};
+  position: relative;
 `;
 
 const StyledLogo = styled.div``;
@@ -18,6 +19,10 @@ const StyledImg = styled.img`
 `;
 
 const StyledWrapParagraph = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -33,6 +38,7 @@ const Paragraph = styled.p`
 
 const StyledLink = styled.a`
   text-decoration: none;
+  padding-left: 10px;
 `;
 
 const Footer = () => {

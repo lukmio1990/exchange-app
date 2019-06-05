@@ -1,8 +1,8 @@
 export const theme = {
-  first: 'red',
-  second: 'blue',
-  third: 'green',
-  darkGrey: 'hsl(229, 2%, 52%)',
+  first: 'rgb( 81, 118, 140)',
+  second: 'rgb(149, 168, 162)',
+  third: 'rgb(238, 117, 96)',
+  darkGrey: 'rgb(67, 89, 100)',
   ligthGrey: 'hsl(209, 19%, 80%)',
   darkBlue: 'hsl(209, 87%, 19%)',
   ligthBlue: 'hsl(212, 58%, 42%)',
@@ -18,3 +18,6 @@ export const theme = {
     xl: '4rem',
   },
 };
+// first: 'rgb( 81, 118, 140)',
+//   second: 'rgb(149, 168, 162)',
+//   third: 'rgb(238, 117, 96',

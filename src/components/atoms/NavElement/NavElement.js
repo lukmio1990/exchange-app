@@ -17,13 +17,13 @@ const StyledTitle = styled.p`
   align-self: center;
   font-size: ${({ theme }) => theme.fontSize.l};
   padding-left: 15px;
-  color: ${({ theme }) => theme.ligthBlue};
-  transform: translateY(100px);
+  color: ${({ theme }) => theme.white};
+  transform: translateY(0);
   transition: transform 0.3s;
   font-weight: ${({ theme }) => theme.bold};
 
   ${StyledWrap}:hover & {
-    transform: translateY(0);
+    transform: scale(1.1);
   }
 `;
 
