@@ -16,7 +16,7 @@ const StyledTitle = styled.p`
   justify-content: center;
   align-self: center;
   font-size: ${({ theme }) => theme.fontSize.l};
-  padding-left: 15px;
+  padding-left: 25px;
   color: ${({ theme }) => theme.white};
   transform: translateY(0);
   transition: transform 0.3s;

@@ -6,7 +6,6 @@ import Triangle from 'components/atoms/Triangle/Triangle';
 import zdj from 'assets/money2.jpg';
 
 const StyledWraper = styled.div`
-  /* margin-top: 50px; */
   min-height: 900px;
   width: 100%;
   position: relative;
@@ -19,7 +18,7 @@ const StyledWraper = styled.div`
 const StyledHeader = styled(Header)`
   text-align: center;
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
@@ -27,6 +26,7 @@ const StyledHeader = styled(Header)`
 
 class ActualExchangeRate extends Component {
   state = {
+    loading: false,
     data: '',
     date: '',
     usd: '',
@@ -74,17 +74,31 @@ class ActualExchangeRate extends Component {
         });
       })
       .catch(error => console.log(error));
+
+    setTimeout(() => {
+      this.setState({
+        loading: true,
+      });
+    }, 1000);
   }
 
   render() {
     return (
       <StyledWraper>
         <Triangle first />
-        <StyledHeader>Aktualne kursy walut z dnia {this.state.date} </StyledHeader>
-        <DataActualCurrency {...this.state} />
+        {this.state.loading ? (
+          <>
+            <StyledHeader>Aktualne kursy walut z dnia {this.state.date} </StyledHeader>
+            <DataActualCurrency {...this.state} />
+          </>
+        ) : (
+          <p>Ładuje</p>
+        )}
       </StyledWraper>
     );
   }
 }
 
 export default ActualExchangeRate;
+
+//     )

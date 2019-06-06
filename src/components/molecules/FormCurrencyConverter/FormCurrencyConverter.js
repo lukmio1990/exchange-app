@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledWraper = styled.div`
   position: absolute;
-  top: 10%;
+  top: 17%;
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
@@ -36,6 +36,12 @@ const StyledInput = styled.input`
   align-items: center;
   width: 160px;
   font-size: 25px;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  :focus {
+    border: 1px solid red;
+    box-shadow: 0px 0px 15px 2px #000000;
+  }
 `;
 
 const StyledSelect = styled.select`
@@ -47,10 +53,15 @@ const StyledButton = styled.button`
   justify-self: center;
   outline: none;
   border: 2px solid green;
+  border-radius: 50px;
   font-size: 25px;
-  padding: 0 5px;
+  padding: 0 25px;
   cursor: pointer;
-  /* width: 100px; */
+  background-color: ${({ theme }) => theme.third};
+  transition: background-color 0.3s;
+  :hover {
+    background-color: ${({ theme }) => theme.second};
+  }
 `;
 
 const FormCurrencyConverter = props => {

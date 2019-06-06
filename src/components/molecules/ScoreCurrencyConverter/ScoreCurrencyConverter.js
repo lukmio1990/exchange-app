@@ -8,7 +8,7 @@ const StyledWrap = styled.div`
   padding: 15px;
   box-shadow: 0px 0px 15px 2px #000000;
   position: absolute;
-  top: 50%;
+  top: 47%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;

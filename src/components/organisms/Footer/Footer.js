@@ -39,6 +39,7 @@ const Paragraph = styled.p`
 const StyledLink = styled.a`
   text-decoration: none;
   padding-left: 10px;
+  color: ${({ theme }) => theme.third};
 `;
 
 const Footer = () => {
@@ -51,7 +52,9 @@ const Footer = () => {
         <Paragraph>Wszelkie prawa zastrzeżone</Paragraph>
         <Paragraph>
           Autor: Łukasz Mioduszewski
-          <StyledLink href="https://github.com/lukmio1990">Zapraszam na github</StyledLink>
+          <StyledLink target="blank" href="https://github.com/lukmio1990">
+            Zapraszam na github
+          </StyledLink>
         </Paragraph>
       </StyledWrapParagraph>
     </StyledWrap>

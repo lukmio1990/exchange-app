@@ -4,20 +4,30 @@ import Header from 'components/atoms/Header/Header';
 import FormCurrencyConverter from 'components/molecules/FormCurrencyConverter/FormCurrencyConverter';
 import ScoreCurrencyConverter from 'components/molecules/ScoreCurrencyConverter/ScoreCurrencyConverter';
 import Triangle from 'components/atoms/Triangle/Triangle';
+import img from 'assets/money4.jpg';
+import { Spring } from 'react-spring/renderprops';
 
 const StyledWrap = styled.div`
-  /* padding-top: 50px; */
-  min-height: 100vh;
+  min-height: 1000px;
   position: relative;
   overflow: hidden;
+  background-image: url(${img});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const StyledHeader = styled(Header)`
-  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 const Paragraph = styled.p`
-  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   color: ${({ theme }) => theme.white};
   padding: 10px;
 `;
@@ -135,7 +145,7 @@ class CurrencyConverter extends Component {
         visible: true,
       });
     } else {
-      console.log('NIe wpisałeś ');
+      alert('Nie wpisałeś kwoty');
     }
   };
 
@@ -156,7 +166,23 @@ class CurrencyConverter extends Component {
           change={handleChangeValue}
           changeSelect={handleChangeCurrency}
         />
-        {this.state.visible ? <ScoreCurrencyConverter {...this.state} /> : null}
+
+        {!this.state.visible ? null : (
+          <Spring
+            from={{
+              opacity: 0,
+            }}
+            to={{
+              opacity: 1,
+            }}
+          >
+            {props => (
+              <div className="box" style={props}>
+                <ScoreCurrencyConverter {...this.state} />
+              </div>
+            )}
+          </Spring>
+        )}
       </StyledWrap>
     );
   }
