@@ -1,19 +1,20 @@
 {
   "files": {
     "main.css": "/exchange-app/static/css/main.795991f2.chunk.css",
-    "main.js": "/exchange-app/static/js/main.444af463.chunk.js",
-    "main.js.map": "/exchange-app/static/js/main.444af463.chunk.js.map",
+    "main.js": "/exchange-app/static/js/main.4648adf1.chunk.js",
+    "main.js.map": "/exchange-app/static/js/main.4648adf1.chunk.js.map",
     "runtime~main.js": "/exchange-app/static/js/runtime~main.80d10873.js",
     "runtime~main.js.map": "/exchange-app/static/js/runtime~main.80d10873.js.map",
-    "static/js/2.d70a297a.chunk.js": "/exchange-app/static/js/2.d70a297a.chunk.js",
-    "static/js/2.d70a297a.chunk.js.map": "/exchange-app/static/js/2.d70a297a.chunk.js.map",
+    "static/js/2.4ee4d237.chunk.js": "/exchange-app/static/js/2.4ee4d237.chunk.js",
+    "static/js/2.4ee4d237.chunk.js.map": "/exchange-app/static/js/2.4ee4d237.chunk.js.map",
     "index.html": "/exchange-app/index.html",
-    "precache-manifest.027a83aedb7b88d91c96d04963455d4f.js": "/exchange-app/precache-manifest.027a83aedb7b88d91c96d04963455d4f.js",
+    "precache-manifest.e2daa3a2131939e6e6d9f6bb4e337d0d.js": "/exchange-app/precache-manifest.e2daa3a2131939e6e6d9f6bb4e337d0d.js",
     "service-worker.js": "/exchange-app/service-worker.js",
     "static/css/main.795991f2.chunk.css.map": "/exchange-app/static/css/main.795991f2.chunk.css.map",
     "static/media/exchangeIcon.png": "/exchange-app/static/media/exchangeIcon.f60d22b3.png",
     "static/media/historyIcon.png": "/exchange-app/static/media/historyIcon.985ff3f9.png",
     "static/media/logo.png": "/exchange-app/static/media/logo.7501904d.png",
-    "static/media/money2.jpg": "/exchange-app/static/media/money2.16e3603c.jpg"
+    "static/media/money2.jpg": "/exchange-app/static/media/money2.16e3603c.jpg",
+    "static/media/money4.jpg": "/exchange-app/static/media/money4.e729aa45.jpg"
   }
 }
