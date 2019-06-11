@@ -43,7 +43,7 @@ const ScoreCurrencyConverter = props => {
           value
         ).toFixed(2)} ${secondCurrency.toUpperCase()}`}
       </StyledTitle>
-      <Paragraph>{`Przelicznik (${firstCurrency.toUpperCase()})/${secondCurrency.toUpperCase()}) wynosi ${(
+      <Paragraph>{`Przelicznik (${firstCurrency.toUpperCase()}/${secondCurrency.toUpperCase()}) wynosi ${(
         firstCurrencyValue / secondCurrencyValue
       ).toFixed(4)}`}</Paragraph>
       <Paragraph>

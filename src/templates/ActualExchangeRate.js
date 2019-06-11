@@ -24,6 +24,14 @@ const StyledHeader = styled(Header)`
   z-index: 9999;
 `;
 
+const StyledLoader = styled.p`
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  font-size: ${({ theme }) => theme.fontSize.xl};
+`;
+
 class ActualExchangeRate extends Component {
   state = {
     loading: false,
@@ -92,7 +100,7 @@ class ActualExchangeRate extends Component {
             <DataActualCurrency {...this.state} />
           </>
         ) : (
-          <p>Ładuje</p>
+          <StyledLoader>Wczytuje dane...</StyledLoader>
         )}
       </StyledWraper>
     );
