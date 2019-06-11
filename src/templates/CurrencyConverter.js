@@ -63,7 +63,7 @@ class CurrencyConverter extends Component {
       });
     } else {
       console.log('pobrano');
-      const API = `http://api.nbp.pl/api/exchangerates/rates/a/${
+      const API = `https://api.nbp.pl/api/exchangerates/rates/a/${
         this.state.firstCurrency
       }/?format=json`;
 
@@ -91,7 +91,7 @@ class CurrencyConverter extends Component {
         secondCurrencyValue: 1,
       });
     } else {
-      const API = `http://api.nbp.pl/api/exchangerates/rates/a/${
+      const API = `https://api.nbp.pl/api/exchangerates/rates/a/${
         this.state.secondCurrency
       }/?format=json`;
 
